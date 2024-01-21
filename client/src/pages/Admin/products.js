@@ -11,7 +11,7 @@ const Products = () => {
   async function GetAllProducts() {
     try {
       const response = await fetch(
-        "http://localhost:8000/api/v1/product/get-product"
+        "https://ecomwebapp.onrender.com/get-product"
       );
       const data = await response.json();
       if (data?.success) {
@@ -43,7 +43,7 @@ const Products = () => {
           {Products.map((p) => (
             <div className="card d-flex border border-3" style={{ width:"25%",height:"100%" }}>
               <img
-                src={`http://localhost:8000/api/v1/product/get-productPhoto/${p._id}`}
+                src={`https://ecomwebapp.onrender.com/get-productPhoto/${p._id}`}
                 className="card-img-top productimage"
                 style={{height:"15rem",width:"100%"}}
               />

@@ -13,7 +13,7 @@ const Forgotpassword = () => {
     try {
       e.preventDefault();
       const response = await fetch(
-        "http://localhost:8000/api/v1/auth/forgetPassword",
+        "https://ecomwebapp.onrender.com/forgetPassword",
         {
           method: "POST",
           headers: {

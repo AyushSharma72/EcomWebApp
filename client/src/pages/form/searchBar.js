@@ -11,7 +11,7 @@ const SearchBar = () => {
     try {
       if (Keyword) {
         const response = await fetch(
-          `http://localhost:8000/api/v1/product/product-search/${Keyword}`
+          `https://ecomwebapp.onrender.com/product-search/${Keyword}`
         );
         const data = await response.json();
         if (response.status === 210) {
@@ -20,7 +20,7 @@ const SearchBar = () => {
         setValues({ ...values, Products: data.Products });
       } else {
         const response = await fetch(
-          "http://localhost:8000/api/v1/product/get-product"
+          "https://ecomwebapp.onrender.com/get-product"
         );
         const data = await response.json();
         if (response.status === 210) {

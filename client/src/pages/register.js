@@ -15,7 +15,7 @@ const Register = () => {
     try {
       e.preventDefault();
       const response = await fetch(
-        "http://localhost:8000/api/v1/auth/register",
+        "https://ecomwebapp.onrender.com/register",
         {
           method: "POST",
           headers: {

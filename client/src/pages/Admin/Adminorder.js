@@ -22,7 +22,7 @@ const Adminorder = () => {
   async function GetOrders() {
     try {
       const response = await fetch(
-        "http://localhost:8000/api/v1/auth/Adminorders",
+        "https://ecomwebapp.onrender.com/Adminorders",
         {
           headers: {
             "Content-Type": "application/json",
@@ -44,7 +44,7 @@ const Adminorder = () => {
   async function HandleStatusChange(NewOrderStatus, id) {
     try {
       const response = await fetch(
-        `http://localhost:8000/api/v1/auth/OrderStatusUpdate/${id}`,
+        `https://ecomwebapp.onrender.com/OrderStatusUpdate/${id}`,
         {
           method: "PUT",
           headers: {
@@ -118,7 +118,7 @@ const Adminorder = () => {
                     <div className="d-flex justify-content-between border border-2 p-2">
                       <div style={{ width: "50%" }}>
                         <img
-                          src={`http://localhost:8000/api/v1/product/get-productPhoto/${p._id}`}
+                          src={`https://ecomwebapp.onrender.com/get-productPhoto/${p._id}`}
                           className="card-img-top"
                           style={{ height: "100%", width: "10rem" }}
                         />

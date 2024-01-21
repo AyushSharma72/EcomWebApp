@@ -14,7 +14,7 @@ const ProductDetails = () => {
   async function GetProduct() {
     try {
       const response = await fetch(
-        `http://localhost:8000/api/v1/product/getSingle-product/${params.slug}`
+        `https://ecomwebapp.onrender.com/getSingle-product/${params.slug}`
       );
 
       const data = await response.json();
@@ -32,7 +32,7 @@ const ProductDetails = () => {
   async function SimilarProducts(pid, cid) {
     try {
       const response = await fetch(
-        `http://localhost:8000/api/v1/product/product-similar/${pid}/${cid}`
+        `https://ecomwebapp.onrender.com/product-similar/${pid}/${cid}`
       );
       const data = await response.json();
       console.log(data);
@@ -54,7 +54,7 @@ const ProductDetails = () => {
           >
             <div style={{ width: "40%" }} className="d-flex ">
               <img
-                src={`http://localhost:8000/api/v1/product/get-productPhoto/${p._id}`}
+                src={`https://ecomwebapp.onrender.com/get-productPhoto/${p._id}`}
                 className="card-img-top"
                 style={{ height: "25rem" }}
               />
@@ -118,7 +118,7 @@ const ProductDetails = () => {
                   >
                     <div style={{ width: "40%" }}>
                       <img
-                        src={`http://localhost:8000/api/v1/product/get-productPhoto/${p._id}`}
+                        src={`https://ecomwebapp.onrender.com/get-productPhoto/${p._id}`}
                         className="card-img-top"
                         style={{ height: "80%" }}
                       />

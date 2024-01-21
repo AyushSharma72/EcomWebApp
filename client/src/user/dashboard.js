@@ -1,7 +1,5 @@
 import React from "react";
 import Layout from "../components/layout/layout";
-import UserMEnu from "./../components/layout/UserMEnu";
-import { useAuth } from "../context/auth";
 import { NavLink } from "react-router-dom";
 const Dashboard = () => {
   const parsedAuth = JSON.parse(localStorage.getItem("auth"));

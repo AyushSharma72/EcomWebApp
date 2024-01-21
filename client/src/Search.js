@@ -24,7 +24,7 @@ const Search = () => {
                 style={{ width: "25%", height: "100%" }}
               >
                 <img
-                  src={`http://localhost:8000/api/v1/product/get-productPhoto/${p._id}`}
+                  src={`https://ecomwebapp.onrender.com/get-productPhoto/${p._id}`}
                   className="card-img-top"
                   style={{ height: "15rem", width: "100%" }}
                 />

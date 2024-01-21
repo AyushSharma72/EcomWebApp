@@ -103,7 +103,7 @@ const CreateCategory = () => {
   async function HandleDelete(id) {
     try {
       const response = await fetch(
-        `http://localhost:8000/api/v1/category/Delete-category/${id}`,
+        `https://ecomwebapp.onrender.com/Delete-category/${id}`,
         {
           method: "DELETE",
           headers: {
