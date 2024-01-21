@@ -24,7 +24,7 @@ const UpateProduct = () => {
   async function GetCategories() {
     try {
       const response = await fetch(
-        "https://ecomwebapp.onrender.com/GetAll-category",
+        "https://ecomwebapp.onrender.com/api/v1/category/GetAll-category",
 
         {
           headers: {
@@ -45,7 +45,7 @@ const UpateProduct = () => {
   async function GetsingleProduct() {
     try {
       const response = await fetch(
-        `https://ecomwebapp.onrender.com/getSingle-product/${params.slug}`
+        `https://ecomwebapp.onrender.com/api/v1/product/getSingle-product/${params.slug}`
       );
       const data = await response.json();
       SetSingleProduct(data.product[0]._id);
@@ -80,7 +80,7 @@ const UpateProduct = () => {
     formData.append("photo", photo);
     try {
       const response = await fetch(
-        `https://ecomwebapp.onrender.com/update-product/${Singleproduct}`,
+        `https://ecomwebapp.onrender.com/api/v1/product/update-product/${Singleproduct}`,
         {
           method: "PUT",
           headers: {
@@ -113,7 +113,7 @@ const UpateProduct = () => {
         return;
       } else {
         const response = await fetch(
-          `https://ecomwebapp.onrender.com/Delete-product/${Singleproduct}`,
+          `https://ecomwebapp.onrender.com/api/v1/product/Delete-product/${Singleproduct}`,
           {
             method: "delete",
             headers: {

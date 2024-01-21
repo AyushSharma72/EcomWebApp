@@ -17,7 +17,7 @@ const CreateCategory = () => {
   async function GetCategories() {
     try {
       const response = await fetch(
-        "http://localhost:8000/api/v1/category/GetAll-category",
+        "https://ecomwebapp.onrender.com/api/v1/category/api/v1/category/GetAll-category",
 
         {
           headers: {
@@ -41,7 +41,7 @@ const CreateCategory = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "http://localhost:8000/api/v1/category/create-category",
+        "https://ecomwebapp.onrender.com/api/v1/category/api/v1/category/create-category",
         {
           method: "POST",
           headers: {
@@ -72,7 +72,7 @@ const CreateCategory = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:8000/api/v1/category/update-category/${selected._id}`,
+        `https://ecomwebapp.onrender.com/api/v1/category/update-category/${selected._id}`,
         {
           method: "PUT",
           headers: {
@@ -103,7 +103,7 @@ const CreateCategory = () => {
   async function HandleDelete(id) {
     try {
       const response = await fetch(
-        `https://ecomwebapp.onrender.com/Delete-category/${id}`,
+        `https://ecomwebapp.onrender.com/api/v1/category/Delete-category/${id}`,
         {
           method: "DELETE",
           headers: {

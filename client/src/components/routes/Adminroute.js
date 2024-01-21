@@ -10,7 +10,7 @@ export default function AdminRoute() {
   useEffect(() => {
     const AuthCheck = async () => {
       try {
-        const res = await fetch("https://ecomwebapp.onrender.com/AdminAuth", {
+        const res = await fetch("https://ecomwebapp.onrender.com/api/v1/auth/AdminAuth", {
           headers: {
             Authorization: auth?.token,
             "Content-Type": "application/json",

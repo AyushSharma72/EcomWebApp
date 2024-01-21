@@ -14,7 +14,7 @@ const ProductDetails = () => {
   async function GetProduct() {
     try {
       const response = await fetch(
-        `https://ecomwebapp.onrender.com/getSingle-product/${params.slug}`
+        `https://ecomwebapp.onrender.com/api/v1/product/getSingle-product/${params.slug}`
       );
 
       const data = await response.json();
@@ -32,7 +32,7 @@ const ProductDetails = () => {
   async function SimilarProducts(pid, cid) {
     try {
       const response = await fetch(
-        `https://ecomwebapp.onrender.com/product-similar/${pid}/${cid}`
+        `https://ecomwebapp.onrender.com/api/v1/product/product-similar/${pid}/${cid}`
       );
       const data = await response.json();
       console.log(data);

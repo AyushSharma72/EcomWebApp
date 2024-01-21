@@ -14,7 +14,7 @@ const Orders = () => {
 
   async function GetOrders() {
     try {
-      const response = await fetch("https://ecomwebapp.onrender.com/orders", {
+      const response = await fetch("https://ecomwebapp.onrender.com/api/v1/auth/orders", {
         headers: {
           "Content-Type": "application/json",
           Authorization: auth?.token,
@@ -34,7 +34,7 @@ const Orders = () => {
   async function CancelOrder(id) {
     try {
       const response = await fetch(
-        `https://ecomwebapp.onrender.com/OrderDelete/${id}`,
+        `https://ecomwebapp.onrender.com/api/v1/product/OrderDelete/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -112,7 +112,7 @@ const Orders = () => {
                   <div className="d-flex justify-content-between border border-2 p-2">
                     <div style={{ width: "50%" }}>
                       <img
-                        src={`https://ecomwebapp.onrender.com/get-productPhoto/${p._id}`}
+                        src={`https://ecomwebapp.onrender.com/api/v1/product/get-productPhoto/${p._id}`}
                         className="card-img-top"
                         style={{ height: "100%", width: "10rem" }}
                       />

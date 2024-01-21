@@ -15,7 +15,7 @@ const Register = () => {
     try {
       e.preventDefault();
       const response = await fetch(
-        "https://ecomwebapp.onrender.com/register",
+        "https://ecomwebapp.onrender.com/api/v1/auth/register",
         {
           method: "POST",
           headers: {

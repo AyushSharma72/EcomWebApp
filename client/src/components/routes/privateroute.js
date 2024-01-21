@@ -10,7 +10,7 @@ export default function PrivateRoute() {
   useEffect(() => {
     const AuthCheck = async () => {
       try {
-        const res = await fetch("https://ecomwebapp.onrender.com/userAuth", {
+        const res = await fetch("https://ecomwebapp.onrender.com/api/v1/auth/userAuth", {
           headers: {
             Authorization: auth?.token,
           },

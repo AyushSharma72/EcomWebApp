@@ -22,7 +22,7 @@ function Home() {
   async function GetCategories() {
     try {
       const response = await fetch(
-        "https://ecomwebapp.onrender.com/GetAll-category",
+        "https://ecomwebapp.onrender.com/api/v1/category/GetAll-category",
 
         {
           headers: {
@@ -43,7 +43,7 @@ function Home() {
     try {
       setLoading(true);
       const response = await fetch(
-        `https://ecomwebapp.onrender.com/product-list/${Page}`
+        `https://ecomwebapp.onrender.com/api/v1/product/product-list/${Page}`
       );
       setLoading(false);
       const data = await response.json();
@@ -72,7 +72,7 @@ function Home() {
   async function FilterProduct() {
     try {
       const response = await fetch(
-        `https://ecomwebapp.onrender.com/productfilter`,
+        `https://ecomwebapp.onrender.com/api/v1/product/productfilter`,
         {
           method: "POST",
           headers: {
@@ -101,7 +101,7 @@ function Home() {
   async function GetTotal() {
     try {
       const response = await fetch(
-        `https://ecomwebapp.onrender.com/product-count`
+        `https://ecomwebapp.onrender.com/api/v1/product/product-count`
       );
       const data = await response.json();
       SetTotalvalue(data?.Total);
@@ -188,7 +188,7 @@ function Home() {
                   style={{ width: "25%", height: "100%" }}
                 >
                   <img
-                    src={`https://ecomwebapp.onrender.com/get-productPhoto/${p._id}`}
+                    src={`https://ecomwebapp.onrender.com/api/v1/product/get-productPhoto/${p._id}`}
                     className="card-img-top productimage"
                     style={{ height: "15rem", width: "100%" }}
                   />

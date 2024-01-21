@@ -24,7 +24,7 @@ const CreateProduct = () => {
   async function GetCategories() {
     try {
       const response = await fetch(
-        "https://ecomwebapp.onrender.com/GetAll-category",
+        "https://ecomwebapp.onrender.com/api/v1/category/GetAll-category",
 
         {
           headers: {
@@ -57,7 +57,7 @@ const CreateProduct = () => {
     formData.append("photo", photo);
     try {
       const response = await fetch(
-        "https://ecomwebapp.onrender.com/create-product",
+        "https://ecomwebapp.onrender.com/api/v1/product/create-product",
         {
           method: "POST",
           headers: {

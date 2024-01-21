@@ -16,7 +16,7 @@ const Profile = () => {
     try {
       e.preventDefault();
       const response = await fetch(
-        "https://ecomwebapp.onrender.com/profile",
+        "https://ecomwebapp.onrender.com/api/v1/auth/profile",
         {
           method: "PUT",
           headers: {

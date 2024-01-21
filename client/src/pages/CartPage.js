@@ -48,7 +48,7 @@ const CartPage = () => {
   async function GetToken() {
     try {
       const response = await fetch(
-        "https://ecomwebapp.onrender.com/braintree/token"
+        "https://ecomwebapp.onrender.com/api/v1/product/braintree/token"
       );
       const data = await response.json();
       if (data) {
@@ -65,7 +65,7 @@ const CartPage = () => {
       SetLoading(true);
 
       const response = await fetch(
-        "https://ecomwebapp.onrender.com/braintree/payment",
+        "https://ecomwebapp.onrender.com/api/v1/product/braintree/payment",
         {
           headers: {
             "Content-Type": "application/json", // Specify the content type
@@ -122,7 +122,7 @@ const CartPage = () => {
                     <div className="d-flex justify-content-between border border-2 p-2">
                       <div style={{ width: "50%" }}>
                         <img
-                          src={`https://ecomwebapp.onrender.com/get-productPhoto/${p._id}`}
+                          src={`https://ecomwebapp.onrender.com/api/v1/product/get-productPhoto/${p._id}`}
                           className="card-img-top"
                           style={{ height: "100%", width: "10rem" }}
                         />

@@ -14,7 +14,7 @@ const Login = () => {
   async function handleSubmit(e) {
     try {
       e.preventDefault();
-      const response = await fetch("https://ecomwebapp.onrender.com/login", {
+      const response = await fetch("https://ecomwebapp.onrender.com/api/v1/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

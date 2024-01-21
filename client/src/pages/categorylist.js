@@ -12,7 +12,7 @@ const Categorylist = () => {
   async function GetCatProduct() {
     try {
       const response = await fetch(
-        `https://ecomwebapp.onrender.com/product-CategoryWise/${Params.id}`
+        `https://ecomwebapp.onrender.com/api/v1/product/product-CategoryWise/${Params.id}`
       );
       const data = await response.json();
       if (data) {
@@ -43,7 +43,7 @@ const Categorylist = () => {
               style={{ width: "22%", height: "100%" }}
             >
               <img
-                src={`https://ecomwebapp.onrender.com/get-productPhoto/${p._id}`}
+                src={`https://ecomwebapp.onrender.com/api/v1/product/get-productPhoto/${p._id}`}
                 className="card-img-top productimage"
                 style={{ height: "15rem", width: "100%" }}
             />
