@@ -1,11 +1,7 @@
 import React from "react";
 import Layout from "../../components/layout/layout";
-
-import { useAuth } from "../../context/auth";
 import { NavLink } from "react-router-dom";
 const AdminDashboard = () => {
-  const { auth } = useAuth();
-
   return (
     <Layout>
       <div className="d-flex flex-column mt-3 align-items-center">
@@ -44,6 +40,15 @@ const AdminDashboard = () => {
               className="list-group-item list-group-item-action"
             >
              Edit Orders
+            </NavLink>
+          </button>
+
+          <button className="btn btn-info  btn-lg ButtonBorder" style={{fontWeight:"700"}}>
+            <NavLink
+              to="/dashboard/Admin/Profile"
+              className="list-group-item list-group-item-action"
+            >
+             Edit Your Profile
             </NavLink>
           </button>
         </div>

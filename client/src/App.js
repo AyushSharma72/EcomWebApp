@@ -12,7 +12,6 @@ import Forgotpassword from "./pages/forgotpassword";
 import AdminRoute from "./components/routes/Adminroute";
 import CreateCategory from "./pages/Admin/CreateCategory";
 import CreateProduct from "./pages/Admin/CeateProduct";
-import User from "./pages/Admin/User";
 import Orders from "./user/orders";
 import Profile from "./user/Profile";
 import Products from "./pages/Admin/products";
@@ -22,6 +21,7 @@ import ProductDetails from "./pages/ProductDetails";
 import Categorylist from "./pages/categorylist";
 import CartPage from "./pages/CartPage";
 import Adminorder from "./pages/Admin/Adminorder";
+import AdminProfile from "./pages/Admin/AdminProfile";
 function App() {
   return (
     <>
@@ -63,11 +63,11 @@ function App() {
             path="admin/Update-Product/:slug"
             element={<UpdateProduct />}
           ></Route>
-          <Route path="Admin/Users" element={<User></User>}></Route>
           <Route
             path="Admin/Orders"
             element={<Adminorder></Adminorder>}
           ></Route>
+             <Route path="Admin/Profile" element={<AdminProfile/>}></Route>
         </Route>
       </Routes>
     </>

@@ -5,36 +5,44 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/auth";
 // import toast from "react-hot-toast";
 
-import { ToastContainer, toast } from "react-toastify";
+import { toast,ToastContainer } from "react-toastify";
 const Login = () => {
   const [Email, SetEmail] = useState("");
   const [Password, SetPassword] = useState("");
   const navigate = useNavigate();
   const [auth, setAuth] = useAuth();
+  const [Loading, SetLoading] = useState(false);
   async function handleSubmit(e) {
     try {
       e.preventDefault();
-      const response = await fetch("https://ecomwebapp.onrender.com/api/v1/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          Email,
-          Password,
-        }),
-      });
+      SetLoading(true);
+      const response = await fetch(
+        "https://ecomwebapp.onrender.com/api/v1/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            Email,
+            Password,
+          }),
+        }
+      );
       const data = await response.json();
 
       if (response.status === 404) {
         //user not registered
+        SetLoading(false);
         toast.error(data.message);
       } else {
         if (response.status === 210) {
           // Invalid Password
+          SetLoading(false);
           toast.error(data.message);
         } else {
           if (response.status === 200) {
+            SetLoading(false);
             //login successful
             toast.success("Login Succesful");
             setAuth({
@@ -45,17 +53,18 @@ const Login = () => {
             localStorage.setItem("auth", JSON.stringify(data));
             setTimeout(() => {
               navigate("/");
-            },2500);
+            }, 2500);
           }
         }
       }
     } catch (error) {
+      SetLoading(false);
       toast.error("Something went wrong try again");
     }
   }
   return (
     <Layout>
-      <ToastContainer />
+      <ToastContainer/>
       <form
         style={{ display: "flex", justifyContent: "center" }}
         onSubmit={(e) => {
@@ -110,7 +119,7 @@ const Login = () => {
             }}
           >
             <button type="submit" className="btn btn-dark">
-              Login
+              {Loading ? "Loading..." : "Login"}
             </button>
             <button
               type="submit"

@@ -10,9 +10,10 @@ const Register = () => {
   const [Answer, SetAnswer] = useState("");
   const [Address, SetAddress] = useState("");
   const navigate = useNavigate();
-
+  const [Loading, SetLoading] = useState(false);
   async function handleSubmit(e) {
     try {
+      SetLoading(true);
       e.preventDefault();
       const response = await fetch(
         "https://ecomwebapp.onrender.com/api/v1/auth/register",
@@ -32,13 +33,15 @@ const Register = () => {
       );
 
       if (response.status === 201) {
-        console.log(response);
+        SetLoading(false);
+
         toast.success("Registration Successful");
         setTimeout(() => {
           navigate("/");
         }, 2000);
       } else if (response.status === 409) {
         // User already exists
+        SetLoading(false);
         const data = await response.json();
         toast.error(data.message);
         setTimeout(() => {
@@ -46,6 +49,7 @@ const Register = () => {
         }, 2000);
       }
     } catch (error) {
+      SetLoading(false);
       toast.error(error);
     }
   }
@@ -143,7 +147,7 @@ const Register = () => {
           </div>
 
           <button type="submit" className="btn btn-dark ">
-            Register
+            {Loading ? "Loading..." : " Register"}
           </button>
         </div>
       </form>
