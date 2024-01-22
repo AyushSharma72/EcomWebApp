@@ -52,14 +52,18 @@ const Register = () => {
   return (
     <Layout>
       <form
-        style={{ display: "flex", justifyContent: "center",alignItems:"center"}}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
         onSubmit={(e) => {
           handleSubmit(e);
         }}
         className="FormBackgound"
       >
         <div className="registerform  ">
-          <h1 style={{margin:"0%"}}>Register</h1>
+          <h1 style={{ margin: "0%" }}>Register</h1>
           <div className="mb-3 wi">
             <label htmlFor="exampleInputName" className="form-label">
               Name
@@ -124,9 +128,7 @@ const Register = () => {
           </div>
 
           <div className="mb-3 wi">
-            <label className="form-label">
-              How many people are there in your family ?
-            </label>
+            <label className="form-label">Who is your Secret crush 😍?</label>
             <input
               type="text"
               className="form-control"

@@ -87,7 +87,7 @@ const Forgotpassword = () => {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               value={Answer}
-              placeholder="How many people are in there your family ?"
+              placeholder="Who is your secret Crush ?"
               onChange={(e) => {
                 SetAnswer(e.target.value);
               }}
