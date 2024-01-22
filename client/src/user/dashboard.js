@@ -16,6 +16,7 @@ const Dashboard = () => {
         <div className="card w-75 p-3 ">
           <h3>Name: {parsedAuth?.user?.Name}</h3>
           <h3>Email: {parsedAuth?.user?.Email}</h3>
+          <h3>Address: {parsedAuth?.user?.Address}</h3>
         </div>
         <div className="d-flex justify-content-around w-25">
           <button
@@ -37,7 +38,7 @@ const Dashboard = () => {
               to="/dashboard/User/Orders"
               className="list-group-item list-group-item-action"
             >
-              Orders
+              Your Orders
             </NavLink>
           </button>
         </div>

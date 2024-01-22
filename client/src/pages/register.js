@@ -13,8 +13,14 @@ const Register = () => {
   const [Loading, SetLoading] = useState(false);
   async function handleSubmit(e) {
     try {
-      SetLoading(true);
       e.preventDefault();
+      SetLoading(true);
+
+      if (Password.length < 6) {
+        toast.error("Password length must be more than 6");
+        SetLoading(false);
+        return;
+      }
       const response = await fetch(
         "https://ecomwebapp.onrender.com/api/v1/auth/register",
         {
@@ -146,7 +152,7 @@ const Register = () => {
             />
           </div>
 
-          <button type="submit" className="btn btn-dark ">
+          <button type="submit" className="btn btn-dark" disabled={Loading}>
             {Loading ? "Loading..." : " Register"}
           </button>
         </div>

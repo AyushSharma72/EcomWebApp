@@ -244,8 +244,9 @@ function Home() {
                         e.preventDefault();
                         SetPage(Page - 1);
                       }}
+                      disabled={loading}
                     >
-                      {loading ? "Loading..." : "Back"}
+                     Back
                     </button>
                   ) : null}
                 </div>
@@ -257,6 +258,7 @@ function Home() {
                         e.preventDefault();
                         SetPage(Page + 1);
                       }}
+                      disabled={loading}
                     >
                       {loading ? "Loading..." : "Load More"}
                     </button>

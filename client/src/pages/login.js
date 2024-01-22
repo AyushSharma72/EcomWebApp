@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/auth";
 // import toast from "react-hot-toast";
 
-import { toast,ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 const Login = () => {
   const [Email, SetEmail] = useState("");
   const [Password, SetPassword] = useState("");
@@ -15,6 +15,7 @@ const Login = () => {
   async function handleSubmit(e) {
     try {
       e.preventDefault();
+    
       SetLoading(true);
       const response = await fetch(
         "https://ecomwebapp.onrender.com/api/v1/auth/login",
@@ -64,7 +65,7 @@ const Login = () => {
   }
   return (
     <Layout>
-      <ToastContainer/>
+      <ToastContainer />
       <form
         style={{ display: "flex", justifyContent: "center" }}
         onSubmit={(e) => {
@@ -118,7 +119,7 @@ const Login = () => {
               width: "100%",
             }}
           >
-            <button type="submit" className="btn btn-dark">
+            <button type="submit" className="btn btn-dark" disabled={Loading}>
               {Loading ? "Loading..." : "Login"}
             </button>
             <button
