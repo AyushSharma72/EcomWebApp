@@ -17,7 +17,7 @@ const CreateCategory = () => {
   async function GetCategories() {
     try {
       const response = await fetch(
-        "https://ecomwebapp.onrender.com/api/v1/category/api/v1/category/GetAll-category",
+        "https://ecomwebapp.onrender.com/api/v1/category/GetAll-category",
 
         {
           headers: {
@@ -41,7 +41,7 @@ const CreateCategory = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://ecomwebapp.onrender.com/api/v1/category/api/v1/category/create-category",
+        "https://ecomwebapp.onrender.com/api/v1/category/create-category",
         {
           method: "POST",
           headers: {

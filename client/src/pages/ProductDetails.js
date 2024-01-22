@@ -54,7 +54,7 @@ const ProductDetails = () => {
           >
             <div style={{ width: "40%" }} className="d-flex ">
               <img
-                src={`https://ecomwebapp.onrender.com/get-productPhoto/${p._id}`}
+                src={`https://ecomwebapp.onrender.com/api/v1/product/get-productPhoto/${p._id}`}
                 className="card-img-top"
                 style={{ height: "25rem" }}
               />
@@ -118,7 +118,7 @@ const ProductDetails = () => {
                   >
                     <div style={{ width: "40%" }}>
                       <img
-                        src={`https://ecomwebapp.onrender.com/get-productPhoto/${p._id}`}
+                        src={`https://ecomwebapp.onrender.com/api/v1/product/get-productPhoto/${p._id}`}
                         className="card-img-top"
                         style={{ height: "80%" }}
                       />

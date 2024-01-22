@@ -45,7 +45,6 @@ const CreateProduct = () => {
   }, []);
 
   async function HandleCreateProduct(e) {
-    
     e.preventDefault();
     const formData = new FormData();
     formData.append("name", name);
@@ -61,12 +60,12 @@ const CreateProduct = () => {
         {
           method: "POST",
           headers: {
-            Authorization: auth?.token,
+            authorization: auth?.token,
           },
           body: formData,
         }
       );
-      console.log("hi");
+
       const data = await response.json();
       if (data?.success) {
         toast.success("Product Created Succesfully");
@@ -83,7 +82,6 @@ const CreateProduct = () => {
   }
   return (
     <Layout>
-      
       <div
         className="d-flex justify-content-around mt-3 overflow-auto"
         style={{ height: "100%" }}

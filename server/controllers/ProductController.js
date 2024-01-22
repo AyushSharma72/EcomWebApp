@@ -33,7 +33,7 @@ async function CreateProductController(req, resp) {
         message: "All fields are required",
       });
     }
-    console.log("yes");
+
     if (photo && photo.size > 1000000) {
       resp.status(500).send({
         message: "Image Size Must Be Less Than 1mb",
@@ -50,8 +50,9 @@ async function CreateProductController(req, resp) {
       success: true,
       message: "Product Created Successfully",
       Product,
-    });
+    }); 
   } catch (error) {
+    console.log(error);
     resp.status(404).send({
       success: false,
       message: "error in creating product",

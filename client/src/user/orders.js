@@ -34,7 +34,7 @@ const Orders = () => {
   async function CancelOrder(id) {
     try {
       const response = await fetch(
-        `https://ecomwebapp.onrender.com/api/v1/product/OrderDelete/${id}`,
+        `https://ecomwebapp.onrender.com/api/v1/auth/OrderDelete/${id}`,
         {
           method: "DELETE",
           headers: {

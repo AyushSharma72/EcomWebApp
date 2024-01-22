@@ -1,25 +1,24 @@
-//protected route
-
+const mongoose = require("mongoose");
 const usermodel = require("../modles/usermodel");
-
 async function IsAdmin(req, resp, next) {
   try {
+    
     const user = await usermodel.findById(req.user._id);
-    if (user.Role !== 1) {
-      resp.status(404).send({
+
+    if (!user || user.Role !== 1) {
+      resp.status(403).send({
         success: false,
         message: "Unauthorized access",
       });
     } else {
       next();
-   
     }
   } catch (error) {
-    resp.status(404).send({
+    console.error(error);
+    resp.status(500).send({
       success: false,
-      message: "error in middleware",
+      message: "Error in middleware",
     });
-    console.log("error");
   }
 }
 
