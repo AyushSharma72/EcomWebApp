@@ -7,7 +7,10 @@ const {
   GetAllOrderController,
   GetAllAdminOrderController,
   UpdateOrderStatus,
-  CancelOrder
+  CancelOrder,
+  GetUsersList,
+  DeleteUser,
+  UserCountController,
 } = require("../controllers/Authcontroller");
 const requireSignIn = require("../middlewares/authMiddleware");
 const IsAdmin = require("../middlewares/Isadmin");
@@ -42,5 +45,10 @@ router.get("/Adminorders", requireSignIn, IsAdmin, GetAllAdminOrderController);
 
 router.put("/OrderStatusUpdate/:id", requireSignIn, IsAdmin, UpdateOrderStatus);
 
+router.get("/UsersList/:page", requireSignIn, IsAdmin, GetUsersList);
+
+router.delete("/UserDelete/:id", requireSignIn, IsAdmin, DeleteUser);
+
 router.delete("/OrderDelete/:id", requireSignIn, CancelOrder);
+router.get("/UserCount", UserCountController);
 module.exports = router;

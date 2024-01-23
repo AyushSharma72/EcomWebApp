@@ -61,10 +61,10 @@ const AdminProfile = () => {
   return (
     <Layout>
       <div
-        className="d-flex justify-content-end"
+        className="d-flex justify-content-around"
         style={{ width: "100%", height: "100%" }}
       >
-        <div className="d-flex mt-3">
+        <div className="mt-3 w-25">
           <AdminMenu/>
         </div>
         <form

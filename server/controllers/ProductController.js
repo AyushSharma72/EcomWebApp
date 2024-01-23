@@ -50,7 +50,7 @@ async function CreateProductController(req, resp) {
       success: true,
       message: "Product Created Successfully",
       Product,
-    }); 
+    });
   } catch (error) {
     console.log(error);
     resp.status(404).send({

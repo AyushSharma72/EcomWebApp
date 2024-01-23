@@ -22,6 +22,7 @@ import Categorylist from "./pages/categorylist";
 import CartPage from "./pages/CartPage";
 import Adminorder from "./pages/Admin/Adminorder";
 import AdminProfile from "./pages/Admin/AdminProfile";
+import Users from "./pages/Admin/User"
 function App() {
   return (
     <>
@@ -67,7 +68,8 @@ function App() {
             path="Admin/Orders"
             element={<Adminorder></Adminorder>}
           ></Route>
-             <Route path="Admin/Profile" element={<AdminProfile/>}></Route>
+          <Route path="Admin/Profile" element={<AdminProfile />}></Route>
+          <Route path="Admin/Users" element={<Users/>}></Route>
         </Route>
       </Routes>
     </>

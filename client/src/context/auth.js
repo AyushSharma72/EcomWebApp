@@ -3,18 +3,18 @@ import { useState, useEffect, useContext, createContext } from "react";
 const AuthContext = createContext();
 
 function AuthProvider({ children }) {
-  const [auth, setauth] = useState({
+  const [auth, Setauth] = useState({
     user: null,
     token: "",
   });
 
   useEffect(() => {
     const data = localStorage.getItem("auth");
-    
+
     if (data) {
       const ParseData = JSON.parse(data);
-      setauth({
-        ...auth,  
+      Setauth({
+        ...auth,
         user: ParseData.user,
         token: ParseData.token,
       });
@@ -22,7 +22,7 @@ function AuthProvider({ children }) {
     //eslint-disable-next-line
   }, []);
   return (
-    <AuthContext.Provider value={[auth, setauth]}>
+    <AuthContext.Provider value={[auth, Setauth]}>
       {children}
     </AuthContext.Provider>
   );

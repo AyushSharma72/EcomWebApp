@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const usermodel = require("../modles/usermodel");
 async function IsAdmin(req, resp, next) {
   try {

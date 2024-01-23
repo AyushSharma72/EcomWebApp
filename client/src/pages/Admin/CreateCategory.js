@@ -127,20 +127,19 @@ const CreateCategory = () => {
   return (
     <Layout>
       <div
-        className="d-flex justify-content-around mt-3 overflow-auto"
+        className="d-flex justify-content-around mt-3 "
         style={{ height: "100%" }}
       >
-        <div className="w-50">
+        <div className="w-25">
           <AdminMenu />
         </div>
         <div
-          className="w-75 d-flex flex-column "
-          style={{ gap: "2rem", height: "100%" }}
+          className=" d-flex flex-column"
+          style={{ gap: "2rem", height: "100%",width:"60%"}}
         >
           <h1 className=" mt-2">Manage Category</h1>
           <div>
-            <div className="w-75">
-           
+            <div>
               <form onSubmit={HandleSubmit}>
                 <div className="mb-3 ">
                   <input
@@ -206,7 +205,6 @@ const CreateCategory = () => {
               footer={null}
             >
               <div className="w-75">
-            
                 <form onSubmit={HandleUpdate}>
                   <div className="mb-3">
                     <input

@@ -83,7 +83,7 @@ async function loginController(req, resp) {
 
     //token
     const token = JWT.sign({ _id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "7d",
+      expiresIn: "4d",
     });
     resp.status(200).send({
       success: true,
@@ -247,6 +247,62 @@ async function CancelOrder(req, resp) {
     });
   }
 }
+async function GetUsersList(req, resp) {
+  try {
+    const page = req.params.page ? req.params.page : 1;
+    const PerPage = 5;
+    const AllUsers = await Usermodel.find({ Role: { $ne: 1 } }) // do not include admins in the response
+      .skip((page - 1) * PerPage) //skip users according to page
+      .limit(PerPage)
+      .sort({ createdAt: -1 });
+    if (AllUsers) {
+      resp.status(200).send({
+        success: true,
+        AllUsers,
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    resp.status(500).send({
+      success: false,
+      message: "Error in User Get Api",
+      error,
+    });
+  }
+}
+async function UserCountController(req, resp) {
+  try {
+    const Total = await Usermodel.countDocuments({ Role: 0 }); // give the number of documents
+    resp.status(200).send({
+      success: true,
+      Total,
+    });
+  } catch (error) {
+    console.log(error);
+    resp.status(500).send({
+      success: false,
+      message: "Error in Pagination",
+      error,
+    });
+  }
+}
+
+async function DeleteUser(req, resp) {
+  try {
+    await Usermodel.findByIdAndDelete(req.params.id);
+    resp.status(200).send({
+      success: true,
+      message: "User Removed Succesfully",
+    });
+  } catch (error) {
+    console.log(error);
+    resp.status(500).send({
+      success: false,
+      message: "Error in deleteing user Api",
+      error,
+    });
+  }
+}
 
 module.exports = {
   registerController,
@@ -257,4 +313,7 @@ module.exports = {
   GetAllAdminOrderController,
   UpdateOrderStatus,
   CancelOrder,
+  GetUsersList,
+  DeleteUser,
+  UserCountController,
 };

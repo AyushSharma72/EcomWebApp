@@ -70,7 +70,7 @@ const Adminorder = () => {
   return (
     <Layout>
       <div className="d-flex justify-content-around mt-3">
-        <div>
+        <div className="w-25">
           <AdminMenu></AdminMenu>
         </div>
         {Orders.length > 0 ? (
@@ -162,7 +162,10 @@ const Adminorder = () => {
             </div>
           </div>
         ) : (
-          <div className="card w-75 p-3 d-flex flex-column align-items-center">
+          <div
+            className="card  p-3 d-flex flex-column align-items-center"
+            style={{ width: "70%" }}
+          >
             <h1>No Orders Found</h1>
             <h5>Look like you haven't ordered anything yet</h5>
             <img src={noorders}></img>

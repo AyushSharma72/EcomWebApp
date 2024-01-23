@@ -51,6 +51,15 @@ const AdminDashboard = () => {
              Edit Your Profile
             </NavLink>
           </button>
+
+          <button className="btn btn-info  btn-lg ButtonBorder" style={{fontWeight:"700"}}>
+            <NavLink
+              to="/dashboard/Admin/Users"
+              className="list-group-item list-group-item-action"
+            >
+           Manage Users
+            </NavLink>
+          </button>
         </div>
         {/* <AdminMenu></AdminMenu> */}
       </div>
