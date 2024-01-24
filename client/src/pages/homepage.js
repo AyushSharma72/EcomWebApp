@@ -13,6 +13,7 @@ function Home() {
   const [checked, SetChecked] = useState([]);
   const [Radioval, SetRadioval] = useState([]);
   const [Totalvalue, SetTotalvalue] = useState(0);
+  const [totalproductshown, settotalproductsshown] = useState(6);
   const [Page, SetPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [load, setLoad] = useState(false);
@@ -199,7 +200,7 @@ function Home() {
                       {p.description.substring(0, 20)}...
                     </p>
                     <p className="card-text">
-                      Price: <span className="priceSpan" >$ {p.price}</span>{" "}
+                      Price: <span className="priceSpan">$ {p.price}</span>{" "}
                     </p>
                     <div className="d-flex justify-content-around">
                       <button
@@ -243,20 +244,22 @@ function Home() {
                       onClick={(e) => {
                         e.preventDefault();
                         SetPage(Page - 1);
+                        settotalproductsshown(totalproductshown - 6);
                       }}
                       disabled={loading}
                     >
-                     Back
+                      Back
                     </button>
                   ) : null}
                 </div>
                 <div className="mt-3 p-3">
-                  {Products.length <= Totalvalue && (
+                  {totalproductshown < Totalvalue && (
                     <button
                       className="btn btn-primary ButtonBorder "
                       onClick={(e) => {
                         e.preventDefault();
                         SetPage(Page + 1);
+                        settotalproductsshown(totalproductshown + 6);
                       }}
                       disabled={loading}
                     >

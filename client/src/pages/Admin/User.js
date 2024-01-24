@@ -10,9 +10,10 @@ const User = () => {
   const [Total, SetTotalvalue] = useState(0);
   const [totaluser, settotaluser] = useState(5);
   const [Users, SetUsers] = useState([]);
-
+  const [Loading, setLoading] = useState(false);
   async function GetAllUsers() {
     try {
+      setLoading(true);
       const response = await fetch(
         `https://ecomwebapp.onrender.com/api/v1/auth/UsersList/${Page}`,
         {
@@ -25,10 +26,13 @@ const User = () => {
       if (response) {
         const data = await response.json();
         SetUsers(data.AllUsers);
+        setLoading(false);
       } else {
+        setLoading(false);
         toast.error("Unable to get user data");
       }
     } catch (error) {
+      setLoading(false);
       toast.error("Something Went Wrong Try Again");
     }
   }
@@ -123,6 +127,7 @@ const User = () => {
                   Setpage(Page - 1);
                   settotaluser(totaluser - 5);
                 }}
+                disabled={Loading}
               >
                 Back
               </button>
@@ -134,6 +139,7 @@ const User = () => {
                   Setpage(Page + 1);
                   settotaluser(totaluser + 5);
                 }}
+                disabled={Loading}
               >
                 Load More
               </button>
