@@ -138,7 +138,7 @@ const Register = () => {
           </div>
 
           <div className="mb-3 wi">
-            <label className="form-label">Who is your Secret crush 😍?</label>
+            <label className="form-label">What is the name of your pet animal ?</label>
             <input
               type="text"
               className="form-control"
